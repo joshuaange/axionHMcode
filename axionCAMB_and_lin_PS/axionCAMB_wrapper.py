@@ -135,8 +135,9 @@ def run_axioncamb(params_path, camb_exec_dir, arg_dic, print_info = True):
     All 
     """
     
-    cwd = os.getcwd()
-    file_path = cwd + "/" + params_path #file path for axionCAMB
+    #cwd = os.getcwd()
+    #file_path = cwd + "/" + params_path #file path for axionCAMB
+    file_path = params_path #file path for axionCAMB
     if print_info == True:
         print("Running CAMB on", file_path)
     output = subprocess.run([camb_exec_dir + "/" + "./camb", file_path], capture_output=True, check=False).stdout.decode(sys.stdout.encoding)
